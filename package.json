@@ -1,6 +1,6 @@
 {
- "name": "@wcd/shinny-mayanqiong.twindlitelement-kpovvcqy",
- "version": "0.0.1",
+ "name": "shinny-mayanqiong.element",
+ "version": "0.0.2",
  "type": "module",
  "main": "src/index.js",
  "module": "src/index.js",
