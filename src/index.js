@@ -126,4 +126,4 @@ export class MyCounter extends LitElement {
   }
 }
 
-customElements.define("my-counter", MyCounter);
+customElements.define("tq-report-metrics", MyCounter);
