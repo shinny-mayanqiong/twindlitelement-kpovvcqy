@@ -91,7 +91,9 @@ export class MyCounter extends LitElement {
   }
   // static properties = ;
 
-  static styles = [sheet.target];
+  static get styles () {
+    return [sheet.target];
+  }
 
   constructor() {
     super();
@@ -117,7 +119,7 @@ export class MyCounter extends LitElement {
         ${this.columns.map((item, index, array)=>{
           return html`
             <tr class="${tw`border-1 border-opacity-50`}">
-              <td class="${tw`py-2 px-2`}">${item.name}</td>
+              <td class="${tw`text(left) py-2 px-2`}">${item.name}</td>
               <td class="${tw`text(right) py-2 px-2`}">${this.formatter(item)}</td>
             </tr>`
         })}
