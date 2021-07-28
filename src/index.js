@@ -1,11 +1,4 @@
-import { LitElement, html } from "lit-element";
-import { create, cssomSheet } from 'twind'
-
-// 1. Create separate CSSStyleSheet
-const sheet = cssomSheet({ target: new CSSStyleSheet() })
-
-// 2. Use that to create an own twind instance
-const { tw } = create({ sheet })
+import { LitElement, html, css } from "lit";
 
 const columns = [{
   'name': '初始资金',
@@ -89,10 +82,24 @@ export class MyCounter extends LitElement {
       metries: {type: Object}
     }
   }
-  // static properties = ;
 
-  static get styles () {
-    return [sheet.target];
+  static get styles() {
+    return css`
+    table.metries {
+      text-indent: 0px;
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+    table.metries>tr {
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+    table.metries>tr>td {
+      padding: 0.5rem;
+    }
+    table.metries>tr>td.text-right {
+      text-align: right;
+    }
+  `;
   }
 
   constructor() {
@@ -115,12 +122,12 @@ export class MyCounter extends LitElement {
 
   render() {
     return html`
-      <table class="${tw`border-2 `}">
+      <table class="metries">
         ${this.columns.map((item, index, array)=>{
           return html`
-            <tr class="${tw`border-1 border-opacity-50`}">
-              <td class="${tw`text(left) py-2 px-2`}">${item.name}</td>
-              <td class="${tw`text(right) py-2 px-2`}">${this.formatter(item)}</td>
+            <tr>
+              <td>${item.name}</td>
+              <td class="text-right">${this.formatter(item)}</td>
             </tr>`
         })}
       </table>
