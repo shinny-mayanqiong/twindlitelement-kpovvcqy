@@ -1,11 +1,10 @@
 {
  "name": "shinny-mayanqiong.element",
- "version": "0.0.2",
+ "version": "0.0.3",
  "type": "module",
  "main": "src/index.js",
  "module": "src/index.js",
  "dependencies": {
-  "lit-element": "^2.5.1",
-  "twind": "^0.16.16"
+  "lit-element": "^2.5.1"
  }
 }
